@@ -1,0 +1,18 @@
+<td>
+  <div class="file-upload hr-inline-group">
+    <label class="upload button">
+      <span>Select Images</span>
+      <input #myInput type="file" accept="{{acceptImage}}" (change)="onChangeFile($event)">
+    </label>
+    <label *ngIf="cacheData['encodedImage'] != null" class="upload button" (click)="reset()" style="background: #e74c3c !important;margin-left: 5px;">
+      <span>Reset Data</span>
+    </label>
+  </div>
+  <p class="file-too-large" *ngIf="showFileTooLargeMessage">{{errorText}}</p>
+
+  <div *ngIf="cacheData['encodedImage'] != null" class="image-container hr-inline-group">
+    <p>{{uploadedFilename}}</p>
+    <img src="data:image/{{cacheData['encodedImageType']}};base64,{{cacheData['encodedImage']}}" style="width: 100px;height: 100px;">
+  </div>
+
+</td>

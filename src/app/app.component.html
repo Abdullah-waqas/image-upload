@@ -1,0 +1,9 @@
+<div>
+  <app-image-upload
+    [acceptImage]="'image/jpg,image/png,image/jpeg'"
+    [maxImageSize]="100"
+    [errorText]="'File size must be less than or equal to 100 Kb'"
+    (changeImage)="changeImage($event)"
+    (resetImage)="resetImage($event)"
+    ></app-image-upload>
+</div>
